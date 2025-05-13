@@ -1,0 +1,16 @@
+# Virtual environment
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Database
+db.sqlite3
+
+# Django migrations (optional to ignore if you regenerate)
+*.migrations/
+
+# OS/system files
+.DS_Store
+*.log
