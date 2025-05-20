@@ -1,16 +1,23 @@
-# Virtual environment
-env/
-
-# Python cache
+# Python
 __pycache__/
-*.pyc
-
-# Database
-db.sqlite3
-
-# Django migrations (optional to ignore if you regenerate)
-*.migrations/
-
-# OS/system files
-.DS_Store
+*.py[cod]
+*.sqlite3
 *.log
+
+# Virtual Environment
+env/
+venv/
+ENV/
+.env
+
+# Django migrations
+**/migrations/
+**/migrations/*.py
+**/migrations/*.pyc
+
+# VS Code settings
+.vscode/
+
+# OS metadata
+.DS_Store
+Thumbs.db
