@@ -2,7 +2,8 @@
 from rest_framework import generics, permissions
 from .models import Expense, Category
 from .serializers import ExpenseSerializer, CategorySerializer
-
+from django.contrib.auth.models import User
+from .serializers import RegisterSerializer
 # Create your views here.
 
 # --Expense Views--
@@ -22,7 +23,7 @@ class ExpenseListCreateView(generics.ListCreateAPIView):
         
 #Retrieve, update, or delete a sinle expense
 class ExpenseDetailView(generics.RetrieveUpdateDestroyAPIView):
-    #queryset = Expense.objects.all()
+    #.queryset = Expense.objects.all()
     serializer_class = ExpenseSerializer
     permission_classes = [permissions.IsAuthenticated]
     
@@ -41,5 +42,10 @@ class CategoryListCreateView(generics.ListCreateAPIView):
 class CategoryDetailView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+
+class RegisterView(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = RegisterSerializer
+    permission_classes = []
     
     
